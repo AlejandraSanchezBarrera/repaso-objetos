@@ -10,14 +10,17 @@ public class Cuadrado implements Figura {
     }
 
     public Cuadrado() {
-        lado=10;
     }
 
     public void setLado(double lado) {
         this.lado=lado;
     }
-    public double getArea() {
-        area=lado*lado;
+
+    public double getArea() throws LadoNoProvistoException {
+        if(lado<=0){
+            throw new LadoNoProvistoException();
+        }
+        area = lado * lado;
         return area;
     }
 
