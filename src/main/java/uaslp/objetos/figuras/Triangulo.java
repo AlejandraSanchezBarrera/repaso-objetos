@@ -8,16 +8,13 @@ public class Triangulo implements Figura{
     private String name;
 
     public Triangulo(double base, double altura) {
-        this.base=base;
-        this.altura=altura;
         this.description="Cualquier triangulo";
         this.name="Tringulo";
     }
 
     public Triangulo(){
-        base=10;
-        altura=3;
         this.description="Cualquier triangulo";
+        this.name="Tringulo";
     }
 
     public void setBase(double base) {
@@ -28,7 +25,13 @@ public class Triangulo implements Figura{
         this.altura=altura;
     }
 
-    public double getArea() {
+    public double getArea()throws DatoFaltanteException {
+        if(base==0){
+            throw new BaseNoProvistaException();
+        }
+        if(altura==0){
+            throw new AlturaNoProvistaException();
+        }
         area=(base*altura)/2;
         return area;
     }
