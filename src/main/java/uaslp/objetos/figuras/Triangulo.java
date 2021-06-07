@@ -8,6 +8,8 @@ public class Triangulo implements Figura{
     private String name;
 
     public Triangulo(double base, double altura) {
+        this.altura=altura;
+        this.base=base;
         this.description="Cualquier triangulo";
         this.name="Tringulo";
     }
