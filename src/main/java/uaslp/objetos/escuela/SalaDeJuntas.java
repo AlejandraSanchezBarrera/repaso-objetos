@@ -1,8 +1,9 @@
 package uaslp.objetos.escuela;
 
-public class SalaDeJuntas {
-    private String nombre;
+public abstract class SalaDeJuntas {
+    protected String name;
+
     public String getNombre() {
-        return nombre;
+        return name;
     }
 }
